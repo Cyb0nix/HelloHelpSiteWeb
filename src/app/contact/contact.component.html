@@ -1,0 +1,71 @@
+<div class="container" style="margin-bottom: 150px;">
+    <h4 class="display-4 text-center" style="padding-top:  40px;">Nous contacter</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="p-5">
+                <h5 class="display-5"><span class="align-middle" style="margin-right: 5px;">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>contact@hellohelp.fr</h5>
+                <div style="padding-top: 120px;">
+                    <h3>Suivez-nous sur</h3>
+                    <div class="align-items-center">
+                        <a href="https://www.instagram.com/hellohelpapp/" target="_blank"
+                            class="text-decoration-none text-reset" style="padding:10px;">
+                            <h5 class="display-5"><span class="align-middle" style="margin-right: 5px;">
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </span>instagram.com/hellohelpapp</h5>
+                        </a>
+                        <a href="https://twitter.com/HelloHelpApp" target="_blank"
+                            class="text-decoration-none text-reset" style="padding:10px;">
+                            <h5 class="display-5"><span class="align-middle" style="margin-right: 5px;">
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </span>twitter.com/HelloHelpApp</h5>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- Default form contact -->
+            <form class="text-center p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+
+                <!-- Name -->
+                <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
+                    class="form-control mb-4" placeholder="Nom">
+
+                <!-- Email -->
+                <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
+                    class="form-control mb-4" placeholder="E-mail">
+
+                <!-- Subject -->
+                <label>Sujet</label>
+                <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+                    <option value="" disabled>Sélectionnez une option</option>
+                    <option value="HelloHelp.fr - Feedback" selected>Feedback</option>
+                    <option value="HelloHelp.fr - Demande d'information">Demande d'information</option>
+                    <option value="HelloHelp.fr - Rapport de bug">Rapport de bug</option>
+                    <option value="HelloHelp.fr - Demande de fonctionnalité4">Demande de fonctionnalité</option>
+                    <option value="HelloHelp.fr - Partenariat">Partenariat</option>
+                </select>
+
+                <!-- Message -->
+                <div class="form-group">
+                    <textarea formControlName="contactFormMessage" class="form-control rounded-0" mdbInput
+                        id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+                </div>
+
+                <!-- Copy -->
+                <mdb-checkbox [default]="true" class="mb-4">M'envoyer une copie du message</mdb-checkbox>
+
+                <!-- Send button -->
+                <button class="btn btn-primary btn-block"
+                    style="padding-left: 20px; padding-right: 20px; margin-top: 10px; background-color: #ffaf20; border: #ffaf20;"
+                    mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Envoyer</button>
+
+            </form>
+            <!-- Default form contact -->
+        </div>
+    </div>
+</div>
